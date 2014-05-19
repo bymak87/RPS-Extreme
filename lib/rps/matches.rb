@@ -1,10 +1,16 @@
 module RPS
 
   class Matches
-    attr_reader :match_id
-
+    attr_reader :p1_id, :p2_id, :status, :match_id, :p1_wins, :p2_wins
     def initialize(data)
       @match_id = data[:match_id]
+      @p1_id = data[:p1_id]
+      @p2_id = data[:p2_id]
+      @status = data[:status]|| "active"
+      @p1_wins = data[:p1_wins] || 0
+      @p2_wins = data[:p2_wins] || 0
+
+
     end
   end
 end
