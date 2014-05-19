@@ -1,14 +1,12 @@
 module RPS
 
   class User
-    attr_reader :user_id
+    attr_reader :id, :name, :password
 
     def initialize(data)
-      @user_id = data[:user_id]
-      @username = data[:username]
-    end
-
-    def create_user
+      @id = data[:id]
+      @name = data[:name]
+      @password = data[:password]
     end
 
   end
