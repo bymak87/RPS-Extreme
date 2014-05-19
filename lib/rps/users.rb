@@ -6,8 +6,10 @@ module RPS
     def initialize(data)
       @user_id = data[:user_id]
       @username = data[:username]
-  end
-  def create_user
-  end
+    end
+
+    def create_user
+    end
+
   end
 end
