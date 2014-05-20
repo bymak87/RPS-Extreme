@@ -26,7 +26,7 @@ module RPS
     end
 
     def build_user(data)
-      RPS::User.new({data[:id], data[:name], data[:password]})
+      RPS::User.new(data)
     end
 
     def update_user(id, data)
@@ -52,7 +52,7 @@ module RPS
     end
 
     def build_match(data)
-      RPS::Match.new({data[:id], data[:p1_id], data[:p2_id]})
+      RPS::Match.new(data)
     end
 
     def update_match(id, data)
@@ -79,7 +79,7 @@ module RPS
     end
 
     def build_game(data)
-      RPS::Game.new({data[:id], data[:match_id], data[:p1_move], data[:p2_move], data[:winner]})
+      RPS::Game.new(data)
     end
 
     def update_game(id, data)
