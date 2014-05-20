@@ -1,7 +1,7 @@
 
 module RPS
 
-  class User < Command
+  class CreateUser < Command
 
     def run(input)
       if input[:name].nil && input[:password].nil

@@ -1,6 +1,6 @@
 module RPS
 
-  class Match < Command
+  class CreateMatch < Command
 
     def run(input)
       if input[:p1_id].nil && input[:p2_id].nil && input[:match_id]

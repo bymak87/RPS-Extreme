@@ -1,6 +1,6 @@
 module RPS
 
-  class Game < Command
+  class CreateGame < Command
 
     def run(input)
       if input[:id].nil && input[:match_id].nil
