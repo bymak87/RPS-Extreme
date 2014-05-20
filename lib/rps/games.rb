@@ -1,6 +1,6 @@
 module RPS
 
-  class Games
+  class Game
     attr_reader :id, :match_id
     attr_accessor :p1_move, :p2_move, :winner
 

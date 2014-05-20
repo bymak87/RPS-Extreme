@@ -1,6 +1,6 @@
 module RPS
 
-  class Matches
+  class Match
     attr_reader :p1_id, :p2_id, :winner, :match_id
     # :p1_wins, :p2_wins
     def initialize(data)
