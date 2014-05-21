@@ -91,5 +91,24 @@ module RPS
       @games.delete[id]
     end
 
+    def show_completed_games(match_id)
+     completed_games = @games.values.select {|game| game.match_id == match_id && game.complete == true}
+
+     completed_games
+    end
+
+    def show_remaining_games(match_id)
+     remaining_games = @games.values.select {|game| game.match_id == match_id && game.complete == false}
+
+     remaining_games
+    end
+
+    def mark_game_complete(id)
+      game = get_game(id)
+      game.complete = true
+
+      game
+    end
+
   end
 end
