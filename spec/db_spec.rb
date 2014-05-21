@@ -1,5 +1,6 @@
 require 'spec_helper'
 
+
 describe "database" do
 
   let(:db) {RPS::DB.new}
@@ -82,17 +83,17 @@ describe "database" do
         # @users.delete[id] should be
         # @users.delete(id) -- change brackets to parentheses
         db.create_user(data)
-        expect(db.users.size).to eq(1) 
+        expect(db.users.size).to eq(1)
         db.delete_user(1)
-        expect(db.users.size).to eq(0) 
+        expect(db.users.size).to eq(0)
       end
       xit "does nothing if user not found or empty hash" do
         db.delete_user(45)
-        expect(db.users.size).to eq(0) 
+        expect(db.users.size).to eq(0)
         db.create_user(data)
-        expect(db.users.size).to eq(1) 
+        expect(db.users.size).to eq(1)
         db.delete_user(45)
-        expect(db.users.size).to eq(1) 
+        expect(db.users.size).to eq(1)
       end
     end
   end
@@ -100,7 +101,7 @@ describe "database" do
   #############
   # Match Class
   #############
-  
+
   describe "Match CRUD methods" do
     data = {p1_id: 1, p2_id: 2}
     describe ".create_match" do
@@ -112,14 +113,14 @@ describe "database" do
         ##        ex. match1.match_id vs match1.id
         db.create_match(data)
         expect(db.matches.size).to eq(1)
-        expect(db.matches[1][:id]).to eq(1)
+        expect(db.matches[1][:match_id]).to eq(1)
         expect(db.matches[1][:p1_id]).to eq(1)
         expect(db.matches[1][:p2_id]).to eq(2)
       end
       it "returns a Match object" do
         match1 = db.create_match(data)
         expect(match1).to be_a(RPS::Match)
-        expect(match1.id).to eq(1)
+        expect(match1.match_id).to eq(1)
         expect(match1.p1_id).to eq(1)
         expect(match1.p2_id).to eq(2)
       end
@@ -162,17 +163,17 @@ describe "database" do
         # @matchs.delete[id] should be
         # @matchs.delete(id) -- change brackets to parentheses
         db.create_match(data)
-        expect(db.matches.size).to eq(1) 
+        expect(db.matches.size).to eq(1)
         db.delete_match(1)
-        expect(db.matches.size).to eq(0) 
+        expect(db.matches.size).to eq(0)
       end
       it "does nothing if match not found or empty hash" do
         db.delete_match(45)
-        expect(db.matches.size).to eq(0) 
+        expect(db.matches.size).to eq(0)
         db.create_match(data)
-        expect(db.matches.size).to eq(1) 
+        expect(db.matches.size).to eq(1)
         db.delete_match(45)
-        expect(db.matches.size).to eq(1) 
+        expect(db.matches.size).to eq(1)
       end
     end
   end

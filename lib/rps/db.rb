@@ -1,3 +1,4 @@
+require 'pry'
 module RPS
 
   class DB
@@ -35,14 +36,15 @@ module RPS
     end
 
     def delete_user(id)
-      @users.delete[id]
+      @users.delete(id)
     end
 
     #Matches
-    def create_matches(data)
+    def create_match(data)
+    # binding.pry
       @next_match_id += 1
-      data[:id]= @next_match_id
-      @matchs[@next_match_id] = data
+      data[:match_id]= @next_match_id
+      @matches[@next_match_id] = data
       build_match(data)
     end
 
@@ -61,7 +63,7 @@ module RPS
     end
 
     def delete_match(id)
-      @matches.delete[id]
+      @matches.delete(id)
     end
 
 # GAMES
@@ -88,7 +90,7 @@ module RPS
     end
 
     def delete_game(id)
-      @games.delete[id]
+      @games.delete(id)
     end
 
     def show_completed_games(match_id)
@@ -110,5 +112,11 @@ module RPS
       game
     end
 
+  end
+end
+
+module RPS
+  def self.db
+    @__db_instance ||=DB.new
   end
 end
