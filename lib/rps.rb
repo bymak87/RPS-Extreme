@@ -1,4 +1,4 @@
-require_relative './rps/commands.rb'
+require_relative './rps/command/commands.rb'
 require_relative './rps/games.rb'
 require_relative './rps/db.rb'
 require_relative './rps/invites.rb'

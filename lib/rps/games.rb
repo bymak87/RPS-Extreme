@@ -10,7 +10,7 @@ module RPS
       @p1_move = data[:p1_move]
       @p2_move = data[:p2_move]
       @winner = data[:winner]
-      @complete ||=
+      @complete = false
 
     end
   end
